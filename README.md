@@ -33,7 +33,7 @@ Antes de iniciar, asegúrate de tener instalados los siguientes programas:
 ##Configuración de Seguridad para Permitir Peticiones del Proyecto del Frontend#
 
 La API está configurada para permitir solicitudes desde el frontend (React.js) ubicado en http://localhost:5173. Esto se logra mediante la configuración de CORS en la clase SecurityConfig del proyecto api.
-
+---
 #Cómo Ejecutar la API#
 
 1. Backend (API)
@@ -53,12 +53,12 @@ Ejecuta la API:
 
 Con Maven: mvn spring-boot:run
 Con Gradle:./gradlew bootRun
-
+---
 Verifica que la API esté corriendo:
 
 Abre tu navegador y accede a:
 http://localhost:8080
-
+---
 ##**Proyecto del frontend**##
 
 Se creó un cliente con React.js utilizando Vite como herramienta de construcción.
@@ -78,7 +78,7 @@ npm run dev
 #Verifica que el cliente esté corriendo#
 Abre tu navegador y accede a:http://localhost:5173
 ##Conexión entre el Frontend y el Backend#
-
+---
 #Configuración del Frontend#
 
 En el archivo .env del cliente, configura la URL base de la API.
@@ -86,21 +86,22 @@ En el archivo .env del cliente, configura la URL base de la API.
 #Prueba de Conexión*#
 Asegúrate de que tanto el backend como el frontend estén corriendo.
 Completa el formulario en el frontend y verifica que los datos se envíen correctamente a la API.
-
+---
 #Resumen de Comandos#
 
 Para la API (Backend)
 Compilar y ejecutar con Maven:
 mvn clean install
 mvn spring-boot:run
-
+---
 Compilar y ejecutar con Gradle:
 ./gradlew build
 ./gradlew bootRun
-
+---
 Para el Cliente (Frontend)
 Instalar dependencias:npm install
 Ejecutar el servidor de desarrollo:npm run dev
+---
 ##Notas Adicionales#
 
 Asegúrate de que MongoDB esté corriendo antes de iniciar la API.
