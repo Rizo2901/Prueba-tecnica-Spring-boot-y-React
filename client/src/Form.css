@@ -1,0 +1,67 @@
+/* Elimina márgenes y rellenos del body y html */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Contenedor principal que ocupa toda la pantalla */
+#root {
+  display: flex; /* Divide la pantalla en dos columnas */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  width: 100vw; /* Ocupa todo el ancho de la pantalla */
+}
+
+/* Contenedor de la izquierda (fondo azul) */
+.left-container {
+  background: linear-gradient(135deg, #006DFF, #5038ED); /* Fondo degradado azul */
+  flex: 1; /* Ocupa el 50% del ancho */
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+/* Imagen dentro del fondo azul */
+.left-container img {
+  max-height: 90%; /* Ajusta el tamaño máximo de la imagen */
+  max-width: 80%; /* Ajusta el tamaño máximo de la imagen */
+  object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+  border-radius: 10%; /* Hace la imagen circular */
+}
+
+/* Contenedor de la derecha (formulario) */
+.right-container {
+  background: white; /* Fondo blanco para el formulario */
+  flex: 1; /* Ocupa el 50% del ancho */
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  padding: 20px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 992px) {
+  #root {
+    flex-direction: column; /* Apila los contenedores en pantallas pequeñas */
+  }
+
+  .left-container,
+  .right-container {
+    flex: none; /* Elimina el comportamiento de dividir el ancho */
+    width: 100%; /* Ambos contenedores ocupan el 100% del ancho */
+    height: auto; /* Ajusta la altura automáticamente */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Reduce el tamaño del título */
+  }
+
+  .form-control {
+    font-size: 0.9rem; /* Reduce el tamaño del texto en los campos */
+  }
+
+  button {
+    font-size: 0.9rem; /* Ajusta el tamaño del botón */
+  }
+}
