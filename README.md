@@ -30,8 +30,7 @@ Antes de iniciar, asegúrate de tener instalados los siguientes programas:
 - **Git** (opcional, para clonar el repositorio).
 
 ---
-##Configuración de Seguridad para Permitir Peticiones del Proyecto del Frontend#
-
+#Configuración de Seguridad para Permitir Peticiones del Proyecto del Frontend#
 La API está configurada para permitir solicitudes desde el frontend (React.js) ubicado en http://localhost:5173. Esto se logra mediante la configuración de CORS en la clase SecurityConfig del proyecto api.
 ---
 #Cómo Ejecutar la API#
