@@ -48,11 +48,15 @@ function Form() {
   // Validar correo en el servidor
   const validateEmail = async (correo) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/usuarios/validar-correo?correo=${correo}`);
+      const response = await fetch(
+        `${API_BASE_URL}/usuarios/validar-correo?correo=${correo}`
+      );
       if (response.ok) {
         const data = await response.text(); // El backend devuelve un string
         if (data === "El correo ya está registrado.") {
-          setEmailError("El correo ya está en uso. Por favor, intenta con otro.");
+          setEmailError(
+            "El correo ya está en uso. Por favor, intenta con otro."
+          );
         } else {
           setEmailError(""); // Limpia el error si el correo está disponible
         }
@@ -108,10 +112,15 @@ function Form() {
         const contentType = response.headers.get("Content-Type");
         if (contentType && contentType.includes("application/json")) {
           const errorData = await response.json();
-          if (response.status === 400 && errorData.message === "El correo ya está registrado.") {
+          if (
+            response.status === 400 &&
+            errorData.message === "El correo ya está registrado."
+          ) {
             alert("El correo ya está en uso. Por favor, intenta con otro.");
           } else {
-            alert("Ocurrió un error al registrar el usuario. Intenta nuevamente.");
+            alert(
+              "Ocurrió un error al registrar el usuario. Intenta nuevamente."
+            );
             console.error("Error al registrar usuario:", errorData);
           }
         } else {
@@ -144,7 +153,9 @@ function Form() {
           {step === 1 && (
             <form onSubmit={handleNextStep}>
               <div className="mb-3">
-                <label htmlFor="nombres" className="form-label">Nombres</label>
+                <label htmlFor="nombres" className="form-label">
+                  Nombres
+                </label>
                 <input
                   type="text"
                   className="form-control"
@@ -156,7 +167,9 @@ function Form() {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="apellidos" className="form-label">Apellidos</label>
+                <label htmlFor="apellidos" className="form-label">
+                  Apellidos
+                </label>
                 <input
                   type="text"
                   className="form-control"
@@ -168,7 +181,9 @@ function Form() {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="correo" className="form-label">Correo Electrónico</label>
+                <label htmlFor="correo" className="form-label">
+                  Correo Electrónico
+                </label>
                 <input
                   type="email"
                   className="form-control"
@@ -178,14 +193,20 @@ function Form() {
                   onChange={(e) => handleEmailChange(e.target.value)}
                   required
                 />
-                {emailError && <small className="text-danger">{emailError}</small>}
+                {emailError && (
+                  <small className="text-danger">{emailError}</small>
+                )}
               </div>
               <div className="mb-3">
-                <label htmlFor="telefono" className="form-label">Teléfono</label>
+                <label htmlFor="telefono" className="form-label">
+                  Teléfono
+                </label>
                 <PhoneInput
                   country={"us"}
                   value={formData.telefono}
-                  onChange={(phone) => setFormData({ ...formData, telefono: phone })}
+                  onChange={(phone) =>
+                    setFormData({ ...formData, telefono: phone })
+                  }
                   inputProps={{
                     name: "telefono",
                     required: true,
@@ -194,7 +215,9 @@ function Form() {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="tipoIdentificacion" className="form-label">Tipo de Identificación</label>
+                <label htmlFor="tipoIdentificacion" className="form-label">
+                  Tipo de Identificación
+                </label>
                 <select
                   className="form-control"
                   id="tipoIdentificacion"
@@ -204,14 +227,22 @@ function Form() {
                   required
                 >
                   <option value="">Seleccione una opción</option>
-                  <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
-                  <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                  <option value="Cédula de Ciudadanía">
+                    Cédula de Ciudadanía
+                  </option>
+                  <option value="Cédula de Extranjería">
+                    Cédula de Extranjería
+                  </option>
                   <option value="Pasaporte">Pasaporte</option>
-                  <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                  <option value="Tarjeta de Identidad">
+                    Tarjeta de Identidad
+                  </option>
                 </select>
               </div>
               <div className="mb-3">
-                <label htmlFor="numeroIdentificacion" className="form-label">Número de Identificación</label>
+                <label htmlFor="numeroIdentificacion" className="form-label">
+                  Número de Identificación
+                </label>
                 <input
                   type="text"
                   className="form-control"
@@ -222,7 +253,9 @@ function Form() {
                   required
                 />
               </div>
-              <button type="submit" className="btn btn-dark w-100">Continuar</button>
+              <button type="submit" className="btn btn-dark w-100">
+                Continuar
+              </button>
             </form>
           )}
 
@@ -231,21 +264,38 @@ function Form() {
             <form onSubmit={handleSubmit}>
               {/* Botón para regresar al paso anterior */}
               <button
-                type="button"
-                className="btn btn-link text-decoration-none p-0 mb-3"
-                onClick={handlePreviousStep}
-                style={{
-                  position: "absolute",
-                  top: "10px",
-                  left: "10px",
-                  fontSize: "1.5rem",
-                }}
-              >
-                ← {/* Flecha para regresar */}
-              </button>
+  type="button"
+  onClick={handlePreviousStep}
+  style={{
+    position: "absolute",
+    top: "10px",
+    left: "10px",
+    fontSize: "1.5rem",
+    padding: "10px 20px",
+    background: "linear-gradient(135deg, #4c4cf1, #6c6cff)", // Gradiente de colores.
+    color: "white",
+    border: "none",
+    borderRadius: "8px", // Bordes redondeados.
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)", // Sombra para darle profundidad.
+    cursor: "pointer",
+    transition: "all 0.3s ease", // Animaciones suaves.
+  }}
+  onMouseOver={(e) => {
+    e.target.style.transform = "scale(1.1)"; // Aumenta el tamaño al pasar el mouse.
+    e.target.style.background = "linear-gradient(135deg, #6c6cff, #4c4cf1)";
+  }}
+  onMouseOut={(e) => {
+    e.target.style.transform = "scale(1)"; // Vuelve al tamaño original.
+    e.target.style.background = "linear-gradient(135deg, #4c4cf1, #6c6cff)";
+  }}
+>
+  ← Atrás
+</button>
 
               <div className="mb-3">
-                <label htmlFor="departamento" className="form-label">Departamento</label>
+                <label htmlFor="departamento" className="form-label">
+                  Departamento
+                </label>
                 <input
                   type="text"
                   className="form-control"
@@ -257,7 +307,9 @@ function Form() {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="municipio" className="form-label">Municipio</label>
+                <label htmlFor="municipio" className="form-label">
+                  Municipio
+                </label>
                 <input
                   type="text"
                   className="form-control"
@@ -269,7 +321,9 @@ function Form() {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="direccion" className="form-label">Dirección</label>
+                <label htmlFor="direccion" className="form-label">
+                  Dirección
+                </label>
                 <input
                   type="text"
                   className="form-control"
@@ -281,7 +335,9 @@ function Form() {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="ingresosMensuales" className="form-label">Ingresos Mensuales</label>
+                <label htmlFor="ingresosMensuales" className="form-label">
+                  Ingresos Mensuales
+                </label>
                 <input
                   type="number"
                   className="form-control"
@@ -292,7 +348,9 @@ function Form() {
                   required
                 />
               </div>
-              <button type="submit" className="btn btn-dark w-100">Enviar</button>
+              <button type="submit" className="btn btn-dark w-100">
+                Enviar
+              </button>
             </form>
           )}
         </div>
