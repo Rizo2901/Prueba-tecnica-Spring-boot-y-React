@@ -69,31 +69,38 @@ Se configuró el cliente para consumir los endpoints de la API.
 Pasos para Ejecutar el Cliente
 Navega al directorio del proyecto cliente:
 
-Instala las dependencias:npm install
+#Instala las dependencias#
+npm install
 
-Ejecuta el servidor de desarrollo:npm run dev
+#Ejecuta el servidor de desarrollo:#
+npm run dev
 
-Verifica que el cliente esté corriendo: 
+#Verifica que el cliente esté corriendo#
 Abre tu navegador y accede a:http://localhost:5173
 ##Conexión entre el Frontend y el Backend#
 
-Configuración del Frontend:
+#Configuración del Frontend#
 
 En el archivo .env del cliente, configura la URL base de la API.
 
-##**Prueba de Conexión**##
+#Prueba de Conexión*#
 Asegúrate de que tanto el backend como el frontend estén corriendo.
 Completa el formulario en el frontend y verifica que los datos se envíen correctamente a la API.
 
-##Resumen de Comandos#
+#Resumen de Comandos#
 
 Para la API (Backend)
 Compilar y ejecutar con Maven:
+mvn clean install
+mvn spring-boot:run
+
 Compilar y ejecutar con Gradle:
-Ejecutar el JAR:
+./gradlew build
+./gradlew bootRun
+
 Para el Cliente (Frontend)
-Instalar dependencias:
-Ejecutar el servidor de desarrollo:
+Instalar dependencias:npm install
+Ejecutar el servidor de desarrollo:npm run dev
 ##Notas Adicionales#
 
 Asegúrate de que MongoDB esté corriendo antes de iniciar la API.
