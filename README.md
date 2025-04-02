@@ -4,13 +4,13 @@ Prueba tecnica con creacion de dos proyectos, uno con nombre api creado con Java
 
 
 
-# API de Registro de Usuarios**##
+# API de Registro de Usuarios#
 
 Esta es una API desarrollada con **Spring Boot** que permite registrar usuarios y validar si un correo electrónico ya está registrado. La API sigue principios de diseño SOLID y está estructurada para ser modular, escalable y fácil de mantener.
 
 ---
 
-## **Características**##
+## **Características##
 
 - Validación de correos electrónicos para evitar duplicados.
 - Registro de usuarios con datos personales, de contacto y ubicación.
@@ -20,7 +20,7 @@ Esta es una API desarrollada con **Spring Boot** que permite registrar usuarios 
 
 ---
 
-## **Requisitos Previos**
+## Requisitos Previos
 
 Antes de iniciar, asegúrate de tener instalados los siguientes programas:
 
