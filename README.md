@@ -34,7 +34,7 @@ Antes de iniciar, asegúrate de tener instalados los siguientes programas:
 
 La API está configurada para permitir solicitudes desde el frontend (React.js) ubicado en http://localhost:5173. Esto se logra mediante la configuración de CORS en la clase SecurityConfig del proyecto api.
 
-##Cómo Ejecutar la API#
+#Cómo Ejecutar la API#
 
 1. Backend (API)
 ¿Qué se hizo?
